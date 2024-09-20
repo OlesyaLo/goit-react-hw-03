@@ -11,14 +11,14 @@ function App() {
   const [contacts, setContacts] = useState(initialContacts);
 
   useEffect(() => {
-    const savedContacts = localStorage.getItem('contacts');
+    const savedContacts = localStorage.getItem('saved-contacts');
     if (savedContacts) {
       setContacts(JSON.parse(savedContacts));
     }
   }, []);
 
   useEffect(() => {
-    localStorage.setItem('contacts', JSON.stringify(contacts));
+    localStorage.setItem('saved-contacts', JSON.stringify(contacts));
   }, [contacts]);
 
   const addContact = newContact => {
