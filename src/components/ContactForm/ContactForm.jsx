@@ -13,8 +13,8 @@ const initialValues = {
 export default function ContactForm({ addContact }) {
   const validationSchema = Yup.object({
     name: Yup.string()
-      .min(3, 'Must be at least 3 characters')
-      .max(50, 'Must be 50 characters or less')
+      .min(3, 'Full name must be at least 3 characters')
+      .max(50, 'Full name must be 50 characters or less')
       .required('Required'),
     number: Yup.string()
       .matches(/^\d{3}-\d{2}-\d{2}$/, 'Phone number is not valid')
