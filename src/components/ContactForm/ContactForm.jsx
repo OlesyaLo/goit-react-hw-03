@@ -5,6 +5,11 @@ import * as Yup from 'yup';
 
 import css from './ContactForm.module.css';
 
+const initialValues = {
+  name: '',
+  number: '',
+};
+
 export default function ContactForm({ addContact }) {
   const validationSchema = Yup.object({
     name: Yup.string()
@@ -15,11 +20,6 @@ export default function ContactForm({ addContact }) {
       .matches(/^\d{3}-\d{2}-\d{2}$/, 'Phone number is not valid')
       .required('Required'),
   });
-
-  const initialValues = {
-    name: '',
-    number: '',
-  };
 
   const nameFieldId = useId();
   const phoneFieldId = useId();
