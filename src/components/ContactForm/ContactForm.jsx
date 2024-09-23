@@ -11,8 +11,10 @@ const validationSchema = Yup.object().shape({
     .max(50, 'Full name must be 50 characters or less')
     .required('Is required'),
   number: Yup.string()
-    .min(3, 'Phone number is too short!')
-    .max(50, 'Phone number is too long!')
+    .matches(
+      /^\d{3}-\d{2}-\d{2}$/,
+      'Phone number is invalid, please enter a phone number in correct format 999-99-99'
+    )
     .required('Is required'),
 });
 
@@ -58,7 +60,9 @@ export default function ContactForm({ addContact }) {
           component="div"
         />
 
-        <button type="submit">Add contact</button>
+        <button className={css.addContactBtn} type="submit">
+          Add contact
+        </button>
       </Form>
     </Formik>
   );
