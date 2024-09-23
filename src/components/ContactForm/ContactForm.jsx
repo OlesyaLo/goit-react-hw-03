@@ -43,7 +43,7 @@ export default function ContactForm({ addContact }) {
         <label className={css.label} htmlFor={nameFieldId}>
           Name
         </label>
-        <Field type="text" name="name" id={nameFieldId} />
+        <Field type="text" className={css.input} name="name" id={nameFieldId} />
         <ErrorMessage
           className={css.errorMessage}
           name="name"
@@ -53,7 +53,12 @@ export default function ContactForm({ addContact }) {
         <label className={css.label} htmlFor={phoneFieldId}>
           Number
         </label>
-        <Field type="tel" name="number" id={phoneFieldId} />
+        <Field
+          type="tel"
+          className={css.input}
+          name="number"
+          id={phoneFieldId}
+        />
         <ErrorMessage
           className={css.errorMessage}
           name="number"

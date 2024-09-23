@@ -1,7 +1,6 @@
 .form {
   display: flex;
   flex-direction: column;
-  gap: 10px;
   margin-bottom: 20px;
   max-width: 300px;
   border: 2px solid #707070;
@@ -12,18 +11,23 @@
 
 .label {
   font-weight: bold;
+  margin-bottom: 3px;
 }
 
-input {
+.input {
   padding: 8px;
   border: 1px solid #707070;
   border-radius: 4px;
+  margin-bottom: 15px;
 }
 
 .addContactBtn {
   margin-top: 10px;
-  border: 1px solid #707070;
-  border-radius: 5px;
+  padding: 5px;
+  width: 150px;
+  height: 30px;
+  display: block;
+  margin: auto;
 }
 
 .errorMessage {

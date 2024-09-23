@@ -35,29 +35,27 @@ ul {
   list-style: none;
 }
 
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 button {
-  border-radius: 8px;
-  border: 2px solid rgb(208, 207, 207);
-  padding: 0.6em 1.2em;
+  border: 1px solid #707070;
+  border-radius: 5px;
+  /* padding: 5px; */
+  
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: #1a1a1a;
+  background-color: #e7e5e5;
   cursor: pointer;
   transition: border-color 0.25s;
-  margin-right: 8px;
 }
 
 button:hover {
   border-color: black;
-}
-
-button {
-  background-color: #e7e5e5;
-}
-
-div {
-  margin-bottom: 20px;
 }
 
 p {
