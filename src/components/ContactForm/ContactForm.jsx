@@ -5,22 +5,23 @@ import * as Yup from 'yup';
 
 import css from './ContactForm.module.css';
 
+const validationSchema = Yup.object().shape({
+  name: Yup.string()
+    .min(3, 'Full name must be at least 3 characters')
+    .max(50, 'Full name must be 50 characters or less')
+    .required('Is required'),
+  number: Yup.string()
+    .min(3, 'Phone number is too short!')
+    .max(50, 'Phone number is too long!')
+    .required('Is required'),
+});
+
 const initialValues = {
   name: '',
   number: '',
 };
 
 export default function ContactForm({ addContact }) {
-  const validationSchema = Yup.object({
-    name: Yup.string()
-      .min(3, 'Full name must be at least 3 characters')
-      .max(50, 'Full name must be 50 characters or less')
-      .required('Required'),
-    number: Yup.string()
-      .matches(/^\d{3}-\d{2}-\d{2}$/, 'Phone number is not valid')
-      .required('Required'),
-  });
-
   const nameFieldId = useId();
   const phoneFieldId = useId();
 

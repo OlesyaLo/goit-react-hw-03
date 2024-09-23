@@ -27,12 +27,18 @@ function App() {
     });
   };
 
+  const deleteContact = contactId => {
+    setContacts(prevContacts => {
+      return prevContacts.filter(contact => contact.id !== contactId);
+    });
+  };
+
   return (
     <div className={css.container}>
       <h1>Phonebook</h1>
       <ContactForm addContact={addContact} />
       <SearchBox />
-      <ContactList contacts={contacts} />
+      <ContactList contacts={contacts} deleteContact={deleteContact} />
     </div>
   );
 }
